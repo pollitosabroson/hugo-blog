@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rio 2016 on Alejandro Rosales</title>
+    <link>localhost/tags/rio-2016/</link>
+    <description>Recent content in Rio 2016 on Alejandro Rosales</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 May 2015 18:53:17 +0200</lastBuildDate>
+    <atom:link href="localhost/tags/rio-2016/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>100 metres at the Olympics</title>
+      <link>/localhost/post/good-to-great/</link>
+      <pubDate>Sun, 24 May 2015 18:53:17 +0200</pubDate>
+      
+      <guid>/localhost/post/good-to-great/</guid>
+      <description>&lt;div style=&#34;width:100%;&#34;id=&#34;&#34;&gt;
+    &lt;canvas id=&#34;canvasMan&#34;&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+
+&lt;div style=&#34;width:100%;&#34;id=&#34;&#34;&gt;
+    &lt;canvas id=&#34;canvasWomen&#34;&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+
+&lt;div style=&#34;width:100%;&#34;id=&#34;&#34;&gt;
+    &lt;canvas id=&#34;canvasVS&#34;&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+    $( document ).ready(function() {
+        var city_all = [&#39;Athens&#39;, &#39;Paris&#39;, &#39;St. Louis&#39;, &#39;London&#39;, &#39;Stockholm&#39;, &#39;Antwerp&#39;, &#39;Paris&#39;, &#39;Amsterdam&#39;, &#39;Los Angeles&#39;, &#39;Berlin&#39;, &#39;London&#39;, &#39;Helsinki&#39;, &#39;Melbourne&#39;, &#39;Rome&#39;, &#39;Tokyo&#39;, &#39;Mexico City&#39;, &#39;Munich&#39;, &#39;Montreal&#39;, &#39;Moscow&#39;, &#39;Los Angeles&#39;, &#39;Seoul&#39;, &#39;Barcelona&#39;, &#39;Atlanta&#39;, &#39;Sydney&#39;, &#39;Athens&#39;, &#39;Beijing&#39;, &#39;London&#39;, &#39;Rio de Janeiro&#39;]
+
+        var run_man = [&#39;Thomas Burke&#39;, &#39;Frank Jarvis&#39;, &#39;Archie Hahn&#39;, &#39;Reggie Walker&#39;, &#39;Ralph Craig&#39;, &#39;Charley Paddock &#39;, &#39;Harold Abrahams&#39;, &#39;Percy Williams&#39;, &#39;Eddie Tolan&#39;, &#39;Jesse Owens&#39;, &#39;Harrison Dillard&#39;, &#39;Lindy Remigino&#39;, &#39;Bobby Morrow&#39;, &#39;Armin Hary&#39;, &#39;Bob Hayes&#39;, &#39;Jim Hines&#39;, &#39;Valeriy Borzov&#39;, &#39;Hasely Crawford&#39;, &#39;Allan Wells&#39;, &#39;Carl Lewis&#39;, &#39;Carl Lewis&#39;, &#39;Linford Christie&#39;, &#39;Donovan Bailey&#39;, &#39;Maurice Greene&#39;, &#39;Justin Gatlin&#39;, &#39;Usain Bolt&#39;, &#39;Usain Bolt&#39;, &#39;Usain Bolt&#39;]
+
+        var manNationality = [&#39;United States&#39;, &#39;United States&#39;, &#39;United States&#39;, &#39;South Africa&#39;, &#39;United States&#39;, &#39;United States&#39;, &#39;Great Britain&#39;, &#39;Canada&#39;, &#39;United States&#39;, &#39;United States&#39;, &#39;United States&#39;, &#39;United States&#39;, &#39;United States&#39;, &#39;Germany&#39;, &#39;United States&#39;, &#39;United States&#39;, &#39;Soviet Union&#39;, &#39;Trinidad and Tobago&#39;, &#39;Great Britain&#39;, &#39;United States&#39;, &#39;United States&#39;, &#39;GBR&#39;, &#39;Canada&#39;, &#39;United States&#39;, &#39;United States&#39;, &#39;Jamaica&#39;, &#39;Jamaica&#39;, &#39;Jamaica&#39;]
+
+        var extasMan = [&#39;Nothing&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;Equal Olympic Record&#39;, &#39;Equal Olympic Record&#39;, &#39;Nothing&#39;, &#39;Equal World Record&#39;, &#39;Nothing&#39;, &#39;Equal Olympic Record&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;Equal Olympic Record&#39;, &#39;Equal Olympic Record&#39;, &#39;Equal World Record&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;World Record&#39;, &#39;Nothing&#39;, &#39;World Record&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;World Record&#39;, &#39;Olympic Record&#39;, &#34;Season&#39;s Best&#34;]
+
+        var city_women = [&#39;Amsterdam&#39;, &#39;Los Angeles&#39;, &#39;Berlin&#39;, &#39;London&#39;, &#39;Helsinki&#39;, &#39;Melbourne&#39;, &#39;Rome&#39;, &#39;Tokyo&#39;, &#39;Mexico City&#39;, &#39;Munich&#39;, &#39;Montreal&#39;, &#39;Moscow&#39;, &#39;Los Angeles&#39;, &#39;Seoul&#39;, &#39;Barcelona&#39;, &#39;Atlanta&#39;, &#39;Sydney&#39;, &#39;Athens&#39;, &#39;Beijing&#39;, &#39;London&#39;, &#39;Rio de Janeiro&#39;]
+
+        var run_woman = [&#39;Betty Robinson&#39;, &#39;Stanisława Walasiewicz&#39;, &#39;Helen Stephens&#39;, &#39;Fanny Blankers-Koen&#39;, &#39;Marjorie Jackson&#39;, &#39;Betty Cuthbert&#39;, &#39;Wilma Rudolph&#39;, &#39;Wyomia Tyus&#39;, &#39;Wyomia Tyus&#39;, &#39;Renate Stecher&#39;, &#39;Annegret Richter&#39;, &#39;Lyudmila Kondratyeva&#39;, &#39;Evelyn Ashford&#39;, &#39;Florence Griffith-Joyner&#39;, &#39;Gail Devers&#39;, &#39;Gail Devers&#39;, &#39;None&#39;, &#39;Yulia Nestsiarenka&#39;, &#39;Shelly-Ann Fraser&#39;, &#39;Shelly-Ann Fraser-Pryce&#39;, &#39;Elaine Thompson&#39;]
+
+        var womenNationality = [&#39;United States&#39;, &#39;Poland&#39;, &#39;United States&#39;, &#39;Netherlands&#39;, &#39;Australia&#39;, &#39;Australia&#39;, &#39;United States&#39;, &#39;United States&#39;, &#39;United States&#39;, &#39;East Germany&#39;, &#39;West Germany&#39;, &#39;URS&#39;, &#39;United States&#39;, &#39;United States&#39;, &#39;United States&#39;, &#39;United States&#39;, &#39;None&#39;, &#39;Belarus&#39;, &#39;Jamaica&#39;, &#39;Jamaica&#39;, &#39;Jamaica&#39;]
+
+        var extrasWomen = [&#39;Equal World Record&#39;, &#39;Equal World Record&#39;, &#39;Nothing&#39;, &#39;Equal Olympic Record&#39;, &#39;Equal World Record&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;World Record&#39;, &#39;World Record&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;, &#39;Nothing&#39;]
+
+        var configMan = {
+            type: &#39;line&#39;,
+            data: {
+                labels: [&#39;1896&#39;, &#39;1900&#39;, &#39;1904&#39;, &#39;1908&#39;, &#39;1912&#39;, &#39;1920&#39;, &#39;1924&#39;, &#39;1928&#39;, &#39;1932&#39;, &#39;1936&#39;, &#39;1948&#39;, &#39;1952&#39;, &#39;1956&#39;, &#39;1960&#39;, &#39;1964&#39;, &#39;1968&#39;, &#39;1972&#39;, &#39;1976&#39;, &#39;1980&#39;, &#39;1984&#39;, &#39;1988&#39;, &#39;1992&#39;, &#39;1996&#39;, &#39;2000&#39;, &#39;2004&#39;, &#39;2008&#39;, &#39;2012&#39;, &#39;2016&#39;],
+                datasets: [{
+                    label: &#34;Time&#34;,
+                    data: [12.0, 11.0, 11.0, 10.8, 10.8, 10.6, 10.6, 10.8, 10.38, 10.3, 10.3, 10.79, 10.5, 10.2, 10.0, 9.9, 10.14, 10.06, 10.25, 9.99, 9.92, 9.96, 9.84, 9.87, 9.85, 9.69, 9.63, 9.81],
+                    lineTension: 0,
+                    fill: false,
+                    backgroundColor: &#34;#3333ff&#34;,
+                    borderColor: &#34;#3333ff&#34;
+                }]
+            },
+            options: {
+                responsive: true,
+                tooltips: {
+                    mode: &#39;label&#39;,
+                    callbacks: {
+                        beforeTitle: function(tooltipItems, data) {
+                            return &#39;City: &#39; + city_all[tooltipItems[0].index];
+                        },
+                        beforeBody: function(data) {
+                            var multistringText = [&#39;Runner: &#39; + run_man[data[0].index]];
+                            multistringText.push(&#39;Nationality: &#39;+ manNationality[data[0].index]);
+                            multistringText.push(&#39;Extra: &#39;+ extasMan[data[0].index]);
+                            return multistringText
+                        }
+                    }
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: &#39;Year&#39;
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: &#39;Time Seconds&#39;
+                        }
+                    }]
+                },
+                title: {
+                    display: true,
+                    text: &#39;100 metres at the Olympics&#39;
+                },
+            }
+        };
+         var configWoman = {
+            type: &#39;line&#39;,
+            data: {
+                labels: [&#39;1928&#39;, &#39;1932&#39;, &#39;1936&#39;, &#39;1948&#39;, &#39;1952&#39;, &#39;1956&#39;, &#39;1960&#39;, &#39;1964&#39;, &#39;1968&#39;, &#39;1972&#39;, &#39;1976&#39;, &#39;1980&#39;, &#39;1984&#39;, &#39;1988&#39;, &#39;1992&#39;, &#39;1996&#39;, &#39;2000&#39;, &#39;2004&#39;, &#39;2008&#39;, &#39;2012&#39;, &#39;2016&#39;],
+                datasets: [{
+                    label: &#34;Time&#34;,
+                    data: [12.2, 11.9, 11.5, 11.9, 11.5, 11.5, 11.18, 11.4, 11.0, 11.07, 11.08, 11.06, 10.97, 10.54, 10.82, 10.94, null, 10.93, 10.7, 10.75, 10.71],
+                    lineTension: 0,
+                    fill: false,
+                    backgroundColor: &#34;#8a00e6&#34;,
+                    borderColor: &#34;#8a00e6&#34;
+                }
+                ]
+            },
+            options: {
+                responsive: true,
+                tooltips: {
+                    mode: &#39;label&#39;,
+                    callbacks: {
+                        beforeTitle: function(tooltipItems, data) {
+                            return &#39;City: &#39; + city_women[tooltipItems[0].index];
+                        },
+                        beforeBody: function(data) {
+                            var multistringText = [&#39;Runner: &#39; + run_woman[data[0].index]];
+                            multistringText.push(&#39;Nationality: &#39;+ womenNationality[data[0].index]);
+                            multistringText.push(&#39;Extra: &#39;+ extrasWomen[data[0].index]);
+                            return multistringText
+                        }
+                    }
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: &#39;Year&#39;
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: &#39;Time&#39;
+                        }
+                    }]
+                },
+                title: {
+                    display: true,
+                    text: &#39;100 metres at the Olympics&#39;
+                }
+            }
+        };
+
+        var configVS = {
+            type: &#39;line&#39;,
+            data: {
+                labels: [&#39;1896&#39;, &#39;1900&#39;, &#39;1904&#39;, &#39;1908&#39;, &#39;1912&#39;, &#39;1920&#39;, &#39;1924&#39;, &#39;1928&#39;, &#39;1932&#39;, &#39;1936&#39;, &#39;1948&#39;, &#39;1952&#39;, &#39;1956&#39;, &#39;1960&#39;, &#39;1964&#39;, &#39;1968&#39;, &#39;1972&#39;, &#39;1976&#39;, &#39;1980&#39;, &#39;1984&#39;, &#39;1988&#39;, &#39;1992&#39;, &#39;1996&#39;, &#39;2000&#39;, &#39;2004&#39;, &#39;2008&#39;, &#39;2012&#39;, &#39;2016&#39;],
+                datasets: [{
+                    label: &#34;Men&#34;,
+                    data: [12.0, 11.0, 11.0, 10.8, 10.8, 10.6, 10.6, 10.8, 10.38, 10.3, 10.3, 10.79, 10.5, 10.2, 10.0, 9.9, 10.14, 10.06, 10.25, 9.99, 9.92, 9.96, 9.84, 9.87, 9.85, 9.69, 9.63, 9.81],
+                    lineTension: 0,
+                    fill: false,
+                    backgroundColor: &#34;#3333ff&#34;,
+                    borderColor: &#34;#3333ff&#34;
+                },{
+                    label: &#34;Woman&#34;,
+                    data: [null, null, null, null, null, null, null, 12.2, 11.9, 11.5, 11.9, 11.5, 11.5, 11.18, 11.4, 11.0, 11.07, 11.08, 11.06, 10.97, 10.54, 10.82, 10.94, null, 10.93, 10.7, 10.75, 10.71],
+                    lineTension: 0,
+                    fill: false,
+                    backgroundColor: &#34;#8a00e6&#34;,
+                    borderColor: &#34;#8a00e6&#34;
+                }
+                ]
+            },
+            options: {
+                responsive: true,
+                hover: {
+                    mode: &#39;label&#39;
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: &#39;Year&#39;
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: &#39;Time&#39;
+                        }
+                    }]
+                },
+                title: {
+                    display: true,
+                    text: &#39;100 metres at the Olympics&#39;
+                }
+            }
+        };
+
+        window.onload = function() {
+            var man = document.getElementById(&#34;canvasMan&#34;).getContext(&#34;2d&#34;);
+            window.myLine = new Chart(man, configMan);
+
+            var woman = document.getElementById(&#34;canvasWomen&#34;).getContext(&#34;2d&#34;);
+            window.myLine = new Chart(woman, configWoman);
+
+            var VS = document.getElementById(&#34;canvasVS&#34;).getContext(&#34;2d&#34;);
+            window.myLine = new Chart(VS, configVS);
+        };
+    });
+&lt;/script&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

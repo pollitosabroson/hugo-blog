@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statistics on Alejandro Rosales</title>
+    <link>localhost/categories/statistics/</link>
+    <description>Recent content in Statistics on Alejandro Rosales</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Aug 2016 12:30:14 +0200</lastBuildDate>
+    <atom:link href="localhost/categories/statistics/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Statistics Videogames 2016</title>
+      <link>/localhost/post/all-games-years/</link>
+      <pubDate>Sun, 28 Aug 2016 12:30:14 +0200</pubDate>
+      
+      <guid>/localhost/post/all-games-years/</guid>
+      <description>&lt;div id=&#34;container&#34; style=&#34;width: 100%;&#34;&gt;
+    &lt;canvas id=&#34;canvas&#34;&gt;&lt;/canvas&gt;
+    &lt;canvas id=&#34;pieChart&#34;&gt;&lt;/canvas&gt;
+    &lt;table class=&#34;table table-hover&#34;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;#&lt;/th&gt;
+                &lt;th&gt;Month&lt;/th&gt;
+                &lt;th&gt;Total Games&lt;/th&gt;
+                &lt;th&gt;Percentage&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody id=&#34;totalMonth&#34;&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+  // Initialize Firebase
+  var months = [&#34;January&#34;, &#34;February&#34;, &#34;March&#34;, &#34;April&#34;, &#34;May&#34;, &#34;June&#34;, &#34;July&#34;, &#34;August&#34;, &#34;September&#34;, &#34;October&#34;, &#34;November&#34;, &#34;December&#34;,]
+  var config = {
+    apiKey: &#34;AIzaSyC2m_Y0FIpXRm-3X0HVZL00iTnY1tc-1jI&#34;,
+    authDomain: &#34;games-d7880.firebaseapp.com&#34;,
+    databaseURL: &#34;https://games-d7880.firebaseio.com&#34;,
+    storageBucket: &#34;games-d7880.appspot.com&#34;,
+  };
+  firebase.initializeApp(config);
+    var database = firebase.database();
+    firebase.database().ref(&#39;count_mount/-KQFb1y8CICXaR_aCM2Y&#39;).on(&#39;value&#39;, function(snapshot) {
+        var total = snapshot.val().reduce(function(a, b) { return a + b; }, 0);
+        var ctx = document.getElementById(&#34;canvas&#34;).getContext(&#34;2d&#34;);
+        var data = {
+            labels: months,
+            datasets: [
+                {
+                    label: &#34;Launched In The Month Game&#34;,
+                    backgroundColor: [
+                        &#39;#0000FF&#39;,
+                        &#39;#FF8000&#39;,
+                        &#39;#FFFF00&#39;,
+                        &#39;#80FF00&#39;,
+                        &#39;#00FF00&#39;,
+                        &#39;#00FF80&#39;,
+                        &#39;#0080FF&#39;,
+                        &#39;#8000FF&#39;,
+                        &#39;#FF00FF&#39;,
+                        &#39;#FF0080&#39;,
+                        &#39;#0000FF&#39;,
+                        &#39;#2B2626&#39;,
+                    ],
+                    borderColor: [
+                        &#39;#0000FF&#39;,
+                        &#39;#FF8000&#39;,
+                        &#39;#FFFF00&#39;,
+                        &#39;#80FF00&#39;,
+                        &#39;#00FF00&#39;,
+                        &#39;#00FF80&#39;,
+                        &#39;#0080FF&#39;,
+                        &#39;#8000FF&#39;,
+                        &#39;#FF00FF&#39;,
+                        &#39;#FF0080&#39;,
+                        &#39;#0000FF&#39;,
+                        &#39;#2B2626&#39;,
+                    ],
+                    borderWidth: 1,
+                    data: snapshot.val(),
+                }
+            ]
+        };
+        var options = {
+            // Elements options apply to all of the options unless overridden in a dataset
+            // In this case, we are setting the border of each bar to be 2px wide and green
+            elements: {
+                rectangle: {
+                    borderWidth: 2,
+                    borderColor: &#39;rgb(0, 255, 0)&#39;,
+                    borderSkipped: &#39;bottom&#39;
+                }
+            },
+            responsive: true,
+            title: {
+                display: true,
+                text: &#39;Total Games Released A Month&#39;
+            }
+        }
+        var myBarChart = new Chart(ctx, {
+            type: &#39;bar&#39;,
+            data: data,
+            options: options
+        });
+        $.each(snapshot.val(), function(index, value) {
+            var percentage = 0;
+            var number = index + 1
+            if (value != 0){
+                percentage = Math.round((value / total) * 100)
+            }
+            $(&#39;#totalMonth&#39;).append(&#39;&lt;tr&gt;&lt;th scope=&#34;row&#34;&gt;&#39; + number+ &#39;&lt;/th&gt; &lt;td&gt;&#39; + months[index]  + &#39;&lt;/td&gt; &lt;td&gt;&#39; + value + &#39;&lt;/td&gt;&lt;td&gt; &#39; + percentage + &#39;%&lt;/td&gt;&lt;/tr&gt;&#39;)
+        })
+        var options = {
+            // Elements options apply to all of the options unless overridden in a dataset
+            // In this case, we are setting the border of each bar to be 2px wide and green
+            elements: {
+                rectangle: {
+                    borderWidth: 2,
+                    borderColor: &#39;rgb(0, 255, 0)&#39;,
+                    borderSkipped: &#39;bottom&#39;
+                }
+            },
+            responsive: true,
+            title: {
+                display: true,
+                text: &#39;Total Games Released A Month&#39;
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var allData = data.datasets[tooltipItem.datasetIndex].data;
+                        var tooltipLabel = data.labels[tooltipItem.index];
+                        var tooltipData = allData[tooltipItem.index];
+                        var total = 0;
+                        for (var i in allData) {
+                            total += allData[i];
+                        }
+                        var tooltipPercentage = Math.round((tooltipData / total) * 100);
+                        return tooltipLabel + &#39;: &#39; + tooltipData + &#39; (&#39; + tooltipPercentage + &#39;%)&#39;;
+                    }
+                }
+            }
+        }
+        var PieChart = document.getElementById(&#34;pieChart&#34;).getContext(&#34;2d&#34;);
+        var myPieChart = new Chart(PieChart, {
+            type: &#39;pie&#39;,
+            data: data,
+            options: options
+        });
+
+    });
+&lt;/script&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

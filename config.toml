@@ -1,0 +1,39 @@
+baseurl = "localhost"
+canonifyurls = true
+languageCode = "en-us"
+paginate = 10
+pygmentsStyle = "native"
+theme = "startbootstrap-clean-blog"
+title = "Alejandro Rosales"
+
+[author]
+  name = "Alejandro Rosales"
+
+[params]
+  DateForm = "Mon, Jan 2, 2006"
+  Description = "Your site description"
+  Author = "Alejandro Rosales"
+  email = "Jose.alejandro.her.ros@gmail.com"
+  Ganalytics = "UA-8596932-4"
+
+
+
+[[params.social]]
+  title = "twitter"
+  url = "https://twitter.com/pollitosabroson"
+[[params.social]]
+  title = "github"
+  url = "https://github.com/pollitosabroson"
+
+[[menu.main]]
+  name = "home"
+  url = "/"
+  weight = -200
+[[menu.main]]
+  name = "Archives"
+  url = "/post/"
+  weight = -180
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = -160
