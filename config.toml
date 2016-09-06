@@ -24,6 +24,9 @@ title = "Alejandro Rosales"
 [[params.social]]
   title = "github"
   url = "https://github.com/pollitosabroson"
+[[params.social]]
+  title = "gitlab"
+  url = "https://gitlab.com/pollitosabroson"
 
 [[menu.main]]
   name = "home"
