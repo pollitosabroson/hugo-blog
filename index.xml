@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Alejandro Rosales</title>
-    <link>https://pollitosabroson.github.io/</link>
+    <link>https://pollitosabroson.github.io/hugo-blog/</link>
     <description>Recent content on Alejandro Rosales</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Code released under the Apache 2.0 license.</copyright>
     <lastBuildDate>Sun, 28 Aug 2016 12:30:14 +0200</lastBuildDate>
-    <atom:link href="https://pollitosabroson.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://pollitosabroson.github.io/hugo-blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Statistics Videogames 2016</title>
-      <link>https://pollitosabroson.github.io/post/all-games-years/</link>
+      <link>https://pollitosabroson.github.io/hugo-blog/post/all-games-years/</link>
       <pubDate>Sun, 28 Aug 2016 12:30:14 +0200</pubDate>
       
-      <guid>https://pollitosabroson.github.io/post/all-games-years/</guid>
+      <guid>https://pollitosabroson.github.io/hugo-blog/post/all-games-years/</guid>
       <description>&lt;p&gt;&lt;div id=&#34;container&#34; style=&#34;width: 100%;&#34;&gt;
     &lt;canvas id=&#34;canvas&#34;&gt;&lt;/canvas&gt;
     &lt;canvas id=&#34;pieChart&#34;&gt;&lt;/canvas&gt;
@@ -223,10 +223,10 @@ VIA &lt;a href=&#34;https://en.wikipedia.org/wiki/2016_in_video_gaming#endnote_P
     
     <item>
       <title>100 metres at the Olympics</title>
-      <link>https://pollitosabroson.github.io/post/good-to-great/</link>
+      <link>https://pollitosabroson.github.io/hugo-blog/post/good-to-great/</link>
       <pubDate>Sun, 24 May 2015 18:53:17 +0200</pubDate>
       
-      <guid>https://pollitosabroson.github.io/post/good-to-great/</guid>
+      <guid>https://pollitosabroson.github.io/hugo-blog/post/good-to-great/</guid>
       <description>&lt;div style=&#34;width:100%;&#34;id=&#34;&#34;&gt;
     &lt;canvas id=&#34;canvasMan&#34;&gt;&lt;/canvas&gt;
 &lt;/div&gt;

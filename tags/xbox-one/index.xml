@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xbox One on Alejandro Rosales</title>
-    <link>https://pollitosabroson.github.io/tags/xbox-one/</link>
+    <link>https://pollitosabroson.github.io/hugo-blog/tags/xbox-one/</link>
     <description>Recent content in Xbox One on Alejandro Rosales</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Code released under the Apache 2.0 license.</copyright>
     <lastBuildDate>Sun, 28 Aug 2016 12:30:14 +0200</lastBuildDate>
-    <atom:link href="https://pollitosabroson.github.io/tags/xbox-one/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://pollitosabroson.github.io/hugo-blog/tags/xbox-one/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Statistics Videogames 2016</title>
-      <link>https://pollitosabroson.github.io/post/all-games-years/</link>
+      <link>https://pollitosabroson.github.io/hugo-blog/post/all-games-years/</link>
       <pubDate>Sun, 28 Aug 2016 12:30:14 +0200</pubDate>
       
-      <guid>https://pollitosabroson.github.io/post/all-games-years/</guid>
+      <guid>https://pollitosabroson.github.io/hugo-blog/post/all-games-years/</guid>
       <description>&lt;p&gt;&lt;div id=&#34;container&#34; style=&#34;width: 100%;&#34;&gt;
     &lt;canvas id=&#34;canvas&#34;&gt;&lt;/canvas&gt;
     &lt;canvas id=&#34;pieChart&#34;&gt;&lt;/canvas&gt;
