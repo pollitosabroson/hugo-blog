@@ -1,4 +1,4 @@
-baseurl = "https://pollitosabroson.gitlab.io"
+baseurl = "https://pollitosabroson.github.io"
 title = "Alejandro Rosales"
 canonifyurls = true
 paginate = 10
