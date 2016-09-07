@@ -2,7 +2,7 @@ baseurl = "https://pollitosabroson.gitlab.io"
 title = "Alejandro Rosales"
 canonifyurls = true
 paginate = 10
-theme = "blog"
+theme = "startbootstrap-clean-blog"
 languageCode = "en-us"
 copyright = "Code released under the Apache 2.0 license."
 
