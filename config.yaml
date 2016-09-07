@@ -3,6 +3,6 @@ layoutdir: "layouts"
 publishdir: "public"
 indexes:
   category: "categories"
-baseurl: "http://pollitosabroson.github.io/hugo-blog/"
+baseurl: "http://pollitosabroson.github.io/hugo-blog"
 title: "Alejandro Rosales"
 canonifyurls: true
