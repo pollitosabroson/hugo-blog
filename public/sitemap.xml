@@ -2,18 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>/localhost/</loc>
-    <lastmod>2016-08-28T12:30:14+02:00</lastmod>
+    <loc>https://pollitosabroson.gitlab.io/</loc>
+    <lastmod>2016-08-28T16:36:36+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/localhost/post/all-games-years/</loc>
+    <loc>https://pollitosabroson.gitlab.io/post/percentage-month/</loc>
+    <lastmod>2016-08-28T16:36:36+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pollitosabroson.gitlab.io/post/all-games-years/</loc>
     <lastmod>2016-08-28T12:30:14+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/localhost/post/good-to-great/</loc>
+    <loc>https://pollitosabroson.gitlab.io/post/good-to-great/</loc>
     <lastmod>2015-05-24T18:53:17+02:00</lastmod>
   </url>
   

@@ -2,20 +2,135 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Alejandro Rosales</title>
-    <link>localhost/</link>
+    <link>https://pollitosabroson.gitlab.io/</link>
     <description>Recent content on Alejandro Rosales</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Aug 2016 12:30:14 +0200</lastBuildDate>
-    <atom:link href="localhost/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Aug 2016 16:36:36 +0200</lastBuildDate>
+    <atom:link href="https://pollitosabroson.gitlab.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Percentage Monthly Per Console</title>
+      <link>https://pollitosabroson.gitlab.io/post/percentage-month/</link>
+      <pubDate>Sun, 28 Aug 2016 16:36:36 +0200</pubDate>
+      
+      <guid>https://pollitosabroson.gitlab.io/post/percentage-month/</guid>
+      <description>&lt;div id=&#34;container&#34; style=&#34;width: 100%;&#34;&gt;
+&lt;/div&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+    // Initialize Firebase
+    var months = [&#34;January&#34;, &#34;February&#34;, &#34;March&#34;, &#34;April&#34;, &#34;May&#34;, &#34;June&#34;, &#34;July&#34;, &#34;August&#34;, &#34;September&#34;, &#34;October&#34;, &#34;November&#34;, &#34;December&#34;,]
+    var labels = [&#39;Nintendo 3DS&#39;, &#39;PC&#39;, &#39;PS3&#39;, &#39;PS4&#39;, &#39;PSVITA&#39;, &#39;Wii U&#39;, &#39;Xbox 360&#39;, &#39;Xbox One&#39;]
+    var config = {
+    apiKey: &#34;AIzaSyC2m_Y0FIpXRm-3X0HVZL00iTnY1tc-1jI&#34;,
+    authDomain: &#34;games-d7880.firebaseapp.com&#34;,
+    databaseURL: &#34;https://games-d7880.firebaseio.com&#34;,
+    storageBucket: &#34;games-d7880.appspot.com&#34;,
+    };
+    firebase.initializeApp(config);
+    var database = firebase.database();
+    firebase.database().ref(&#39;percent_mount&#39;).on(&#39;value&#39;, function(snapshot) {
+        var result = snapshot.val();
+        var key = Object.keys(snapshot.val())[0];
+        $.each(result[key], function(index, values) {
+            if (index != 0) {
+                var dataChart = []
+                var nameCanvas = &#34;canvas&#34; + index
+                $(&#39;#container&#39;).append(&#39;&lt;canvas id=&#34;&#39; + nameCanvas + &#39;&#34;&gt;&lt;/canvas&gt;&#39;);
+                $(&#39;#container&#39;).append(&#39;&lt;table class=&#34;table table-hover&#34;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Console&lt;/th&gt;&lt;th&gt;Total&lt;/th&gt;&lt;th&gt;Percentage&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody id=&#34;totalMonth&#39; + nameCanvas + &#39;&#34;&gt;&lt;/tbody&gt;&lt;/table&gt;&#39;)
+                $.each(labels, function(position, val) {
+                    dataChart.push(values[val])
+                })
+                firebase.database().ref(&#39;category_mount&#39;).on(&#39;value&#39;, function(value){
+                    var keyMount = Object.keys(value.val())[0];
+                    $.each(labels, function(position, val) {
+                        $(&#39;#totalMonth&#39; + nameCanvas).append(&#39;&lt;tr&gt;&lt;td&gt;&#39; + val  + &#39;&lt;/td&gt;&lt;td&gt;&#39; + value.val()[keyMount][index][val] + &#39;&lt;/td&gt;&lt;td&gt; &#39; + values[val] + &#39; %&lt;/td&gt;&lt;/tr&gt;&#39;)
+                    })
+                });
+                firebase.database().ref(&#39;videogames_mount&#39;).on(&#39;value&#39;, function(value){
+                    var keyMount = Object.keys(value.val())[0];
+                    console.log(snapshot.val()[keyMount])
+                });
+                var title = &#39;Percentage Of Games Released For Console In The Month Of &#39; + months[index - 1];
+                var ctx = document.getElementById( nameCanvas ).getContext(&#34;2d&#34;);
+                var data = {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: &#34;Launched In The Month Game&#34;,
+                            backgroundColor: [
+                                &#39;#0000FF&#39;,
+                                &#39;#FF8000&#39;,
+                                &#39;#FFFF00&#39;,
+                                &#39;#80FF00&#39;,
+                                &#39;#00FF00&#39;,
+                                &#39;#00FF80&#39;,
+                                &#39;#0080FF&#39;,
+                                &#39;#8000FF&#39;,
+                                &#39;#FF00FF&#39;,
+                                &#39;#FF0080&#39;,
+                                &#39;#0000FF&#39;,
+                                &#39;#2B2626&#39;,
+                            ],
+                            borderColor: [
+                                &#39;#0000FF&#39;,
+                                &#39;#FF8000&#39;,
+                                &#39;#FFFF00&#39;,
+                                &#39;#80FF00&#39;,
+                                &#39;#00FF00&#39;,
+                                &#39;#00FF80&#39;,
+                                &#39;#0080FF&#39;,
+                                &#39;#8000FF&#39;,
+                                &#39;#FF00FF&#39;,
+                                &#39;#FF0080&#39;,
+                                &#39;#0000FF&#39;,
+                                &#39;#2B2626&#39;,
+                            ],
+                            borderWidth: 1,
+                            data: dataChart,
+                        }
+                    ]
+                };
+                var options = {
+                    // Elements options apply to all of the options unless overridden in a dataset
+                    // In this case, we are setting the border of each bar to be 2px wide and green
+                    responsive: true,
+                    title: {
+                        display: true,
+                        text: title
+                    },
+                    legend: {
+                        position: &#39;left&#39;
+                    }
+                }
+                var myPieChart = new Chart(ctx, {
+                    type: &#39;pie&#39;,
+                    data: data,
+                    options: options
+                });
+                
+            }
+        })  
+    });
+    firebase.database().ref(&#39;games_month&#39;).on(&#39;value&#39;, function(snapshot) {
+        var result = snapshot.val();
+        var key = Object.keys(result)[0];
+        console.log(result)
+        console.log(key)
+
+    });
+&lt;/script&gt;
+</description>
+    </item>
     
     <item>
       <title>Statistics Videogames 2016</title>
-      <link>/localhost/post/all-games-years/</link>
+      <link>https://pollitosabroson.gitlab.io/post/all-games-years/</link>
       <pubDate>Sun, 28 Aug 2016 12:30:14 +0200</pubDate>
       
-      <guid>/localhost/post/all-games-years/</guid>
-      <description>&lt;div id=&#34;container&#34; style=&#34;width: 100%;&#34;&gt;
+      <guid>https://pollitosabroson.gitlab.io/post/all-games-years/</guid>
+      <description>&lt;p&gt;&lt;div id=&#34;container&#34; style=&#34;width: 100%;&#34;&gt;
     &lt;canvas id=&#34;canvas&#34;&gt;&lt;/canvas&gt;
     &lt;canvas id=&#34;pieChart&#34;&gt;&lt;/canvas&gt;
     &lt;table class=&#34;table table-hover&#34;&gt;
@@ -31,20 +146,22 @@
         &lt;/tbody&gt;
     &lt;/table&gt;
 &lt;/div&gt;
+VIA &lt;a href=&#34;https://en.wikipedia.org/wiki/2016_in_video_gaming#endnote_Published&#34;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
 
 &lt;script type=&#34;text/javascript&#34;&gt;
   // Initialize Firebase
-  var months = [&#34;January&#34;, &#34;February&#34;, &#34;March&#34;, &#34;April&#34;, &#34;May&#34;, &#34;June&#34;, &#34;July&#34;, &#34;August&#34;, &#34;September&#34;, &#34;October&#34;, &#34;November&#34;, &#34;December&#34;,]
-  var config = {
+    var months = [&#34;January&#34;, &#34;February&#34;, &#34;March&#34;, &#34;April&#34;, &#34;May&#34;, &#34;June&#34;, &#34;July&#34;, &#34;August&#34;, &#34;September&#34;, &#34;October&#34;, &#34;November&#34;, &#34;December&#34;,]
+    var config = {
     apiKey: &#34;AIzaSyC2m_Y0FIpXRm-3X0HVZL00iTnY1tc-1jI&#34;,
     authDomain: &#34;games-d7880.firebaseapp.com&#34;,
     databaseURL: &#34;https://games-d7880.firebaseio.com&#34;,
     storageBucket: &#34;games-d7880.appspot.com&#34;,
-  };
-  firebase.initializeApp(config);
+    };
+    firebase.initializeApp(config);
     var database = firebase.database();
-    firebase.database().ref(&#39;count_mount/-KQFb1y8CICXaR_aCM2Y&#39;).on(&#39;value&#39;, function(snapshot) {
-        var total = snapshot.val().reduce(function(a, b) { return a + b; }, 0);
+    firebase.database().ref(&#39;count_mount&#39;).on(&#39;value&#39;, function(snapshot) {
+        var key = Object.keys(snapshot.val())[0];
+        var total = snapshot.val()[key].reduce(function(a, b) { return a + b; }, 0);
         var ctx = document.getElementById(&#34;canvas&#34;).getContext(&#34;2d&#34;);
         var data = {
             labels: months,
@@ -52,35 +169,35 @@
                 {
                     label: &#34;Launched In The Month Game&#34;,
                     backgroundColor: [
+                        &#39;#80FF00&#39;,
                         &#39;#0000FF&#39;,
                         &#39;#FF8000&#39;,
                         &#39;#FFFF00&#39;,
-                        &#39;#80FF00&#39;,
                         &#39;#00FF00&#39;,
-                        &#39;#00FF80&#39;,
                         &#39;#0080FF&#39;,
                         &#39;#8000FF&#39;,
                         &#39;#FF00FF&#39;,
                         &#39;#FF0080&#39;,
-                        &#39;#0000FF&#39;,
+                        &#39;#00FF80&#39;,
+                        &#39;#C207A0&#39;,
                         &#39;#2B2626&#39;,
                     ],
                     borderColor: [
+                        &#39;#80FF00&#39;,
                         &#39;#0000FF&#39;,
                         &#39;#FF8000&#39;,
                         &#39;#FFFF00&#39;,
-                        &#39;#80FF00&#39;,
                         &#39;#00FF00&#39;,
-                        &#39;#00FF80&#39;,
                         &#39;#0080FF&#39;,
                         &#39;#8000FF&#39;,
                         &#39;#FF00FF&#39;,
                         &#39;#FF0080&#39;,
-                        &#39;#0000FF&#39;,
+                        &#39;#00FF80&#39;,
+                        &#39;#C207A0&#39;,
                         &#39;#2B2626&#39;,
                     ],
                     borderWidth: 1,
-                    data: snapshot.val(),
+                    data: snapshot.val()[key],
                 }
             ]
         };
@@ -105,7 +222,7 @@
             data: data,
             options: options
         });
-        $.each(snapshot.val(), function(index, value) {
+        $.each(snapshot.val()[key], function(index, value) {
             var percentage = 0;
             var number = index + 1
             if (value != 0){
@@ -150,6 +267,68 @@
             data: data,
             options: options
         });
+    });
+    firebase.database().ref(&#39;games_month&#39;).on(&#39;value&#39;, function(snapshot) {
+        var result = snapshot.val();
+        var key = Object.keys(result)[0];
+        $.each(months, function(index, values) {
+            $(&#39;#container&#39;).append(&#39;&lt;canvas id=&#34;&#39; + values + &#39;&#34;&gt;&lt;/canvas&gt;&#39;);
+            $(&#39;#container&#39;).append(&#39;&lt;table class=&#34;table table-hover&#34;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Day&lt;/th&gt;&lt;th&gt;Total&lt;/th&gt;&lt;th&gt;Game&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody id=&#34;totalMonth&#39; + values + &#39;&#34;&gt;&lt;/tbody&gt;&lt;/table&gt;&#39;)
+            var labels = [], dataChart = [];
+            $.each(result[key][values.toUpperCase()], function(position, val){
+                if (result[key][values.toUpperCase()][position] != undefined) {
+                    labels.push(position)
+                    dataChart.push(result[key][values.toUpperCase()][position].length)
+                    $(&#39;#totalMonth&#39; + values).append(&#39;&lt;tr&gt;&lt;td&gt;&#39; + position  + &#39;&lt;/td&gt;&lt;td&gt; &#39; + result[key][values.toUpperCase()][position].length + &#39;&lt;/td&gt;&lt;td&gt;&#39; + result[key][values.toUpperCase()][position].join(&#39;, &#39;) + &#39;&lt;/td&gt;&lt;/tr&gt;&#39;)
+
+                }
+            });
+            var ctx = document.getElementById( values ).getContext(&#34;2d&#34;);
+            var data = {
+                labels: labels,
+                datasets: [
+                    {
+                        label: &#34;Launched In The Month &#34; + values,
+                        backgroundColor: [
+                            &#34;#3D3551&#34;, &#34;#884EA2&#34;, &#34;#EA648D&#34;, &#34;#FFFC3A&#34;, &#34;#03414D&#34;, &#34;#72DFD0&#34;, &#34;#A0F6D2&#34;, &#34;#EF7079&#34;, &#34;#BF382A&#34;, &#34;#683531&#34;, &#34;#6D0AD3&#34;, &#34;#0098EF&#34;, &#34;#00CF95&#34;, &#34;#D1FFA2&#34;, &#34;#2F3032&#34;, &#34;#383A56&#34;, &#34;#B0A565&#34;, &#34;#EDE68A&#34;, &#34;#01005E&#34;, &#34;#22267B&#34;, &#34;#28518A&#34;, &#34;#17B794&#34;, &#34;#B062EA&#34;, &#34;#F392F2&#34;, &#34;#FED08F&#34;, &#34;#F6F39F&#34;, &#34;#283739&#34;, &#34;#2C5D63&#34;, &#34;#A2C11C&#34;, &#34;#E0E0E0&#34;, &#34;#312F44&#34;,
+                        ],
+                        borderColor: [
+                            &#34;#3D3551&#34;, &#34;#884EA2&#34;, &#34;#EA648D&#34;, &#34;#FFFC3A&#34;, &#34;#03414D&#34;, &#34;#72DFD0&#34;, &#34;#A0F6D2&#34;, &#34;#EF7079&#34;, &#34;#BF382A&#34;, &#34;#683531&#34;, &#34;#6D0AD3&#34;, &#34;#0098EF&#34;, &#34;#00CF95&#34;, &#34;#D1FFA2&#34;, &#34;#2F3032&#34;, &#34;#383A56&#34;, &#34;#B0A565&#34;, &#34;#EDE68A&#34;, &#34;#01005E&#34;, &#34;#22267B&#34;, &#34;#28518A&#34;, &#34;#17B794&#34;, &#34;#B062EA&#34;, &#34;#F392F2&#34;, &#34;#FED08F&#34;, &#34;#F6F39F&#34;, &#34;#283739&#34;, &#34;#2C5D63&#34;, &#34;#A2C11C&#34;, &#34;#E0E0E0&#34;, &#34;#312F44&#34;,
+                        ],
+                        borderWidth: 1,
+                        data: dataChart,
+                    }
+                ]
+            };
+            var options = {
+                // Elements options apply to all of the options unless overridden in a dataset
+                // In this case, we are setting the border of each bar to be 2px wide and green
+                elements: {
+                    rectangle: {
+                        borderWidth: 2,
+                        borderColor: &#39;rgb(0, 255, 0)&#39;,
+                        borderSkipped: &#39;bottom&#39;
+                    }
+                },
+                responsive: true,
+                title: {
+                    display: true,
+                    text: &#39;Total Games Released A &#39; +  values
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+            var myBarChart = new Chart(ctx, {
+                type: &#39;bar&#39;,
+                data: data,
+                options: options
+            });
+        })
 
     });
 &lt;/script&gt;
@@ -158,10 +337,10 @@
     
     <item>
       <title>100 metres at the Olympics</title>
-      <link>/localhost/post/good-to-great/</link>
+      <link>https://pollitosabroson.gitlab.io/post/good-to-great/</link>
       <pubDate>Sun, 24 May 2015 18:53:17 +0200</pubDate>
       
-      <guid>/localhost/post/good-to-great/</guid>
+      <guid>https://pollitosabroson.gitlab.io/post/good-to-great/</guid>
       <description>&lt;div style=&#34;width:100%;&#34;id=&#34;&#34;&gt;
     &lt;canvas id=&#34;canvasMan&#34;&gt;&lt;/canvas&gt;
 &lt;/div&gt;
